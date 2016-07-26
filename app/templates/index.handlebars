@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<title>I love BEM</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/app.css?v={{timestamp}}">
-	{{>favicon siteUrl="http://localhost:3000"}}
 	<!--[if IE 9]>
 		<link rel="stylesheet" href="css/ie9.css">
 	<![endif]-->
@@ -15,10 +15,13 @@
 	<![endif]-->
 </head>
 <body>
-	<div class="container">
-		{{>button}}
-		{{>inputs}}
-		{{>form}}
+	<div class="wrapper">
+		<!-- Header -->
+		{{>header}}
+		<!-- Reviews -->
+		{{>reviews}}
+		<!-- Concept -->
+		{{>concept}}
 	</div>
 	<script src="js/plugins.min.js"></script>
 	<script src="js/app.js?v={{timestamp}}"></script>

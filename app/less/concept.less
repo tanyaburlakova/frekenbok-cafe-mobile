@@ -1,0 +1,49 @@
+.concept {
+    position: relative;
+    &__head {
+        font-family: 'Lobster', cursive;
+        font-size: 15px;
+        position: absolute;
+        z-index: 2;
+        margin-top: -30px;
+        padding: 28px 0 0;
+        text-align: center;
+        letter-spacing: .8px;
+
+        .image-2x('../images/concept-head.png');
+    }
+}
+
+.concept-carousel {
+    &__slide {
+        height: 430px;
+        padding-top: 66px;
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: cover;
+    }
+    &__title {
+        line-height: 1.2;
+        margin: 0 0 15px;
+        text-align: center;
+    }
+    &__avatar {
+        width: 75px;
+        height: 75px;
+        margin: 0 auto;
+        .image {
+            position: relative;
+            width: 75px;
+            height: 75px;
+            border: 3px solid #db9f2d;
+            border-radius: 50%;
+        }
+    }
+    &__text {
+        margin: -13px 0 0;
+        padding: 23px 15px;
+        line-height: 1.4;
+
+        .image-2x('../images/concept-box.png');
+    }
+}
