@@ -29,9 +29,6 @@ $(() => {
             // Events
             touchDrag: false,
 
-            //Autoplay
-            autoplay: 5000,
-
             // Other
             addClassActive: true,
             singleItem: true,
