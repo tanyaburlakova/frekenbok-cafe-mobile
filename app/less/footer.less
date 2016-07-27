@@ -1,17 +1,29 @@
 .footer-site {
     font-size: 15px;
-    padding: 25px 10px;
+    position: relative;
+    padding: 25px 10px 40px;
     text-align: center;
-    background: url('../img/bg/pattern_green.jpg') repeat 0 0;
     &__head {
-        font-size: 15px;
-        line-height: 45px;
-        margin: 0 auto 28px;
-        background-position: 50% 0;
-        .image-2x('../img/footer-head.png');
+        margin-bottom: 28px;
     }
     &__address {
         margin: 0 0 22px;
+    }
+    &:before {
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        content: '';
+
+        .image-2x('../img/footer-bg.png');
+    }
+    &:after {
+        position: absolute;
+        top: 55px;
+        right: 5px;
+        content: '';
+
+        .image-2x('../img/footer-icon.png');
     }
 }
 
@@ -22,6 +34,7 @@
     display: block;
     margin: 0 auto 10px;
     background-position: 50% 0;
+
     .image-2x('../img/footer-map-button.png');
     &:before {
         position: absolute;
@@ -41,7 +54,7 @@
     text-align: left;
     &__item {
         margin: 0 0 8px;
-        .text,
+        .text ,
         .icon {
             display: inline-block;
             vertical-align: middle;
@@ -50,14 +63,16 @@
         &_email {
             .icon {
                 margin: 0 2px 0 0;
-                background-position: 0 4px;
                 padding-bottom: 4px;
+                background-position: 0 4px;
+
                 .image-2x('../img/footer-email.png');
             }
         }
         &_phone {
             .icon {
                 margin: 0 8px 0 8px;
+
                 .image-2x('../img/footer-phone.png');
             }
         }
