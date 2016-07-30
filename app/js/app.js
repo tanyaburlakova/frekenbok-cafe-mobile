@@ -1,4 +1,10 @@
 $(() => {
+    var
+        $body = $('body'),
+        // classes
+        showOverlay = 'is-show-overlay',
+        showNavigation = 'is-show-navigation';
+
     $(document).ready(function() {
         $(".jsOpinionsCarousel").owlCarousel({
             items: 1,
@@ -37,6 +43,17 @@ $(() => {
         });
     });
 
+    // show/hide site navigation
+    $('.jsNavigationHandle').on('click', function( e ) {
+        e.preventDefault();
+
+        if ( !($body.hasClass( showNavigation + ' ' + showOverlay ) ) ) {
+            $body.addClass(showNavigation + ' ' + showOverlay);
+        } else {
+            $body.removeClass(showNavigation + ' ' + showOverlay);
+        }
+    });
+
     // When the window has finished loading create our google map below
     google.maps.event.addDomListener(window, 'load', init);
 
@@ -45,7 +62,7 @@ $(() => {
         // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
         var mapOptions = {
             // How zoomed in you want the map to start at (always required)
-            zoom: 1,
+            zoom: 3,
             disableDefaultUI:true,
 
             // The latitude and longitude to center the map (always required)
