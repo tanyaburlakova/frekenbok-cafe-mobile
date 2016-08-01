@@ -1,18 +1,9 @@
 .navigation {
     font-size: 17px;
-    position: fixed;
-    //z-index: 95;
-    left: 50%;
-    transform: translate(-50%, 0);
     text-align: center;
     color: #3c3c3c;
-    transition: all .3s ease-out;
-    z-index: -1;
-    top: -100%;
-    opacity: 0;
 
     .lobster();
-    .image-2x('../img/nav-bg.png');
     &__list {
         position: absolute;
         top: 50%;
@@ -24,8 +15,8 @@
     &__link {
         display: block;
         padding: 14px;
-        color: #3c3c3c;
         letter-spacing: 1px;
+        color: #3c3c3c;
     }
     .nav-red-letter {
         color: #d74d38;
@@ -42,11 +33,4 @@
     .nav-green-letter {
         color: #9bb624;
     }
-}
-
-.is-show-navigation .navigation {
-    z-index: 95;
-    opacity: 1;
-    visibility: visible;
-    top: 60px;
 }

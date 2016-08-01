@@ -20,7 +20,7 @@ a {
 .headline {
     .lobster();
     font-size: 21px;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, .6);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, .6);
     &_section {
         font-size: 15px;
         line-height: 45px;
@@ -28,7 +28,7 @@ a {
         text-align: center;
         background-position: 50% 0;
 
-        .image-2x('../img/footer-head.png');
+        .retina-sprite(@footer-head-group);
     }
 }
 

@@ -1,38 +1,77 @@
 .form {
-	&__header {
+    &__content {
+        .clearfix();
+    }
+    &__row {
+        position: relative;
+        margin-bottom: 23px;
+        &:before ,
+        &:after {
+            position: absolute;
+            content: '';
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+        &_first {
+            &:before {
+                top: -17px;
+                left: -16px;
 
-	}
-	&__title {
+                .retina-sprite(@input-decor-1-group);
+            }
+            &:after {
+                top: 20px;
+                right: -20px;
 
-	}
-	&__text {
+                .retina-sprite(@input-decor-2-group);
+            }
+        }
+        &_second {
+            &:before {
+                top: 5px;
+                left: -21px;
 
-	}
-	&__content {
-		.clearfix();
-	}
-	&__row {
-		margin-bottom: 20px;
-		.clearfix();
-	}
-	&__column {
-		float: left;
-		min-height: 20px;
-		&_left {
-			width: 40%;
-		}
-		&_right {
-			width: 60%;
-		}
-	}
-	&__cell {
-		float: left;
-		width: 50%;
-		&:first-child {
-			padding-right: 10px;
-		}
-		&:last-child {
-			padding-left: 10px;
-		}
-	}
+                .retina-sprite(@input-decor-3-group);
+            }
+            &:after {
+                top: 18px;
+                right: -20px;
+
+                .retina-sprite(@input-decor-4-group);
+            }
+        }
+        &_third {
+            &:before {
+                bottom: -15px;
+                left: -18px;
+
+                .retina-sprite(@input-decor-6-group);
+            }
+            &:after {
+                top: 45px;
+                right: -17px;
+
+                .retina-sprite(@input-decor-5-group);
+            }
+        }
+    }
+    &__data {
+        display: none;
+    }
+    &__complete {
+        display: block;
+        padding: 30px 0 0;
+    }
+    &__complete-text {
+        font-size: 15px;
+        line-height: 1.5;
+        margin: 0;
+        &:after {
+            display: block;
+            margin: 10px auto;
+            content: '';
+
+            .retina-sprite(@popup-send-ok-group);
+        }
+    }
 }

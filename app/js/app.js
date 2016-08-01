@@ -1,57 +1,85 @@
 $(() => {
     var
         $body = $('body'),
+        $popups = $('.jsPopupEl'),
         // classes
-        showOverlay = 'is-show-overlay',
-        showNavigation = 'is-show-navigation';
+        showPopup = 'is-show-popup';
 
-    $(document).ready(function() {
-        $(".jsOpinionsCarousel").owlCarousel({
-            items: 1,
 
-            // Events
-            touchDrag: false,
+    $(".jsOpinionsCarousel").owlCarousel({
+        items: 1,
 
-            //Autoplay
-            autoplay: 7000,
+        // Events
+        touchDrag: false,
 
-            // Navigation
-            navigation: false,
-            navigationText : false,
+        //Autoplay
+        autoplay: true,
+        autoplayTimeout: 8000;
 
-            //Pagination
-            pagination: true,
-            paginationNumbers: false,
+        //Pagination
+        dots: true,
 
-            // Other
-            addClassActive: true,
-            singleItem: true,
-            animateIn: 'fadeIn',
-            animateOut: 'fadeOut',
-        });
-        $('.jsConceptCarousel').owlCarousel({
-            items: 1,
+        // Other
+        addClassActive: true,
+        singleItem: true,
+        animateIn: 'fadeIn',
+        loop: true,
+        animateOut: 'fadeOut',
+    });
+    $('.jsConceptCarousel').owlCarousel({
+        items: 1,
 
-            // Events
-            touchDrag: false,
+        // Events
+        touchDrag: false,
 
-            // Other
-            addClassActive: true,
-            singleItem: true,
-            animateIn: 'fadeIn',
-            animateOut: 'fadeOut',
-        });
+        // Other
+        addClassActive: true,
+        dots: false,
+        nav: true,
+        navText: false,
+        singleItem: true,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
+        loop: true,
     });
 
-    // show/hide site navigation
-    $('.jsNavigationHandle').on('click', function( e ) {
+    $('.jsReviewsCarousel').owlCarousel({
+        items: 1,
+
+        // Events
+        touchDrag: false,
+
+        // Other
+        addClassActive: true,
+        dots: false,
+        nav: true,
+        navText: false,
+        singleItem: true,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
+        loop: true
+    });
+
+    // show/hide site popups
+    $('.jsPopupHandler').on('click', function( e ) {
         e.preventDefault();
 
-        if ( !($body.hasClass( showNavigation + ' ' + showOverlay ) ) ) {
-            $body.addClass(showNavigation + ' ' + showOverlay);
+        var
+            currentClass = $(this).data('popup-handler'),
+            currentPopup = $popups.filter('[data-popup-el="' + currentClass + '"]');
+        // vars
+
+        if ( !(currentPopup.hasClass( showPopup ) ) ) {
+            currentPopup.addClass(showPopup);
         } else {
-            $body.removeClass(showNavigation + ' ' + showOverlay);
+            currentPopup.removeClass(showPopup);
         }
+    });
+
+    $('.jsPopupCloser').on('click', function( e ) {
+        e.preventDefault();
+
+        $(this).closest('.jsPopupEl').removeClass(showPopup);
     });
 
     // When the window has finished loading create our google map below

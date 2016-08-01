@@ -1,0 +1,44 @@
+<div class="popup jsPopupEl" data-popup-el="send-review">
+	<div class="popup__inner form">
+		<!-- Form -->
+		<form action="#">
+			<!-- Header -->
+			<header class="form__header">
+				<h2 class="form__title headline">
+					Оставить отзыв
+				</h2>
+			</header>
+			<!-- Content -->
+			<div class="form__content">
+				<div class="form__data">
+					<!-- City -->
+					<div class="form__row form__row_first">
+						<input id="city" type="text" class="input" placeholder="Из какого вы города?">
+					</div>
+					<!-- Name -->
+					<div class="form__row form__row_second">
+						<input id="name" type="text" class="input" placeholder="Как Вас зовут?">
+					</div>
+					<!-- Email -->
+					<div class="form__row form__row_third">
+						<textarea id="review" class="textarea" placeholder="Напишите, что вы о нас думаете"></textarea>
+					</div>
+					<!-- Submit -->
+					<div class="form__row">
+						<button class="btn btn_send">
+							<span class="btn__text">Отправить</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="form__complete">
+					<p class="form__complete-text">
+						Ваш отзыв отправлен первым классом.<br/>Спасибо!
+					</p>
+				</div>
+			</div>
+		</form>
+		<div class="popup__closer jsPopupCloser"></div>
+	</div>
+	<div class="overlay jsPopupCloser"></div>
+</div>

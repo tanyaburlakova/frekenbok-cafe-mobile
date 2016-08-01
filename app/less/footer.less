@@ -15,7 +15,7 @@
         bottom: 10px;
         content: '';
 
-        .image-2x('../img/footer-bg.png');
+        .retina-sprite(@footer-bg-group);
     }
     &:after {
         position: absolute;
@@ -23,7 +23,7 @@
         right: 5px;
         content: '';
 
-        .image-2x('../img/footer-icon.png');
+        .retina-sprite(@footer-icon-group);
     }
 }
 
@@ -35,7 +35,7 @@
     margin: 0 auto 10px;
     background-position: 50% 0;
 
-    .image-2x('../img/footer-map-button.png');
+    .retina-sprite(@footer-map-button-group);
     &:before {
         position: absolute;
         top: 0;
@@ -62,17 +62,17 @@
         }
         &_email {
             .icon {
-                margin: 0 8px 0 0;
-                background: url('../img/stamp.svg') no-repeat 0 0;
                 width: 42px;
                 height: 42px;
+                margin: 0 8px 0 0;
+                background: url('../img/stamp.svg') no-repeat 0 0;
             }
         }
         &_phone {
             .icon {
                 margin: 0 8px 0 8px;
 
-                .image-2x('../img/footer-phone.png');
+                .retina-sprite(@footer-phone-group);
             }
         }
     }

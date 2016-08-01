@@ -27,15 +27,36 @@
     color: #ffffff;
     background: #869791;
 }
+.owl-nav {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    width: 100%;
+    font-size: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.owl-prev {
+    display: inline-block;
+    margin: 0 21px;
+    vertical-align: top;
+
+    .retina-sprite(@slider-btn-prev-group);
+}
+.owl-next {
+    display: inline-block;
+    margin: 0 20px;
+    vertical-align: top;
+
+    .retina-sprite(@slider-btn-next-group);
+}
 .owl-theme .owl-nav .disabled {
     cursor: default;
     opacity: .5;
 }
-
 .owl-theme .owl-nav.disabled + .owl-dots {
     margin-top: 10px;
 }
-
 .owl-theme .owl-dots {
     text-align: center;
 

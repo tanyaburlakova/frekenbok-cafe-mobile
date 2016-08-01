@@ -202,22 +202,22 @@ gulp.task('lessBuild', () => {
             let output = stats.minifiedSize / 1000;
             let efficiency = stats.efficiency * 100
             console.log(`
-File name:  ${details.name}
-Before:     ${input} kB
-After:      ${output} kB
-Time spent: ${stats.timeSpent} ms
-Efficiency: ${efficiency}%
-			`);
+                File name:  ${details.name}
+                Before:     ${input} kB
+                After:      ${output} kB
+                Time spent: ${stats.timeSpent} ms
+                Efficiency: ${efficiency}%
+            `);
         }))
         .pipe(gulp.dest('public/css'));
 });
 
 /******************************
- * Sprite build
+ * Sprite
  ******************************/
 gulp.task('sprite', function() {
     var spriteData =
-        gulp.src('assets/img/sprite/*.*') // путь, откуда берем картинки для спрайта
+        gulp.src('assets/img/sprite/*.*')
         .pipe(spritesmith({
             retinaSrcFilter: ['assets/img/sprite/*@2x.png'],
             imgName: 'sprite.png',
@@ -229,6 +229,6 @@ gulp.task('sprite', function() {
     		retinaImgPath: '../img/sprite@2x.png',
         }));
 
-    spriteData.img.pipe(gulp.dest('public/img')); // путь, куда сохраняем картинку
-    spriteData.css.pipe(gulp.dest('app/less')); // путь, куда сохраняем стили
+    spriteData.img.pipe(gulp.dest('public/img'));
+    spriteData.css.pipe(gulp.dest('app/less'));
 });

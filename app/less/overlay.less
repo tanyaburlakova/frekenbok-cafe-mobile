@@ -1,20 +1,12 @@
 .overlay {
     position: fixed;
-    //z-index: 90;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(241, 201, 140, .5);
-    opacity: 0;
-    z-index: -1;
     transition: all .3s ease-out;
     overflow: hidden;
-    visibility: hidden;
-}
-
-.is-show-overlay .overlay {
     z-index: 90;
-    opacity: 1;
     visibility: visible;
 }
