@@ -1,7 +1,7 @@
 .events {
     padding: 25px 0 0;
     background: url('../img/bg/pattern_light_blue.jpg') repeat 0 0;
-    &__head {
+    &__title {
         margin-bottom: 33px;
     }
     &__frame {
@@ -19,6 +19,7 @@
             left: 50%;
             content: '';
             transform: translate(-50%, 0);
+
             .retina-sprite(@frame-hands-small-group);
         }
         &_double-height {
@@ -51,27 +52,10 @@
         background-position: 50% 0;
         background-size: cover;
     }
-}
-
-.i-frame-button {
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
-    top: -32px;
-    width: 16px;
-    height: 16px;
-    &_blue {
-        background-image: url('../img/but_image_blue.svg');
-    }
-    &_green {
-        background-image: url('../img/but_image_green.svg');
-    }
-    &_lazur {
-        background-image: url('../img/but_image_bluegreen.svg');
-    }
-    &_orange {
-        background-image: url('../img/but_image_yellow.svg');
+    .icon {
+        position: absolute;
+        top: -32px;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
 }

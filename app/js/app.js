@@ -81,7 +81,7 @@ $(() => {
         }
     });
 
-    $('.jsPopupCloser').on('click', function(e) {
+    $('.jsPopupClose').on('click', function(e) {
         e.preventDefault();
 
         $(this).closest('.jsPopupEl').removeClass(showPopup);

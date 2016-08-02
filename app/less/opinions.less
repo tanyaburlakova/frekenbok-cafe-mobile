@@ -6,8 +6,8 @@
     background-size: cover;
 }
 
-.opinions-carousel {
-    &__slide {
+.columns-slider {
+    &__item {
         padding-top: 14px;
 
         .clearfix();
@@ -19,7 +19,7 @@
     &__avatar {
         position: relative;
         top: -20px;
-        transition: all .7s ease .1s;
+        transition: all .5s ease .1s;
         opacity: 0;
         .image {
             position: relative;
@@ -32,7 +32,7 @@
             bottom: -28px;
             left: 50%;
             content: '';
-            transition: all .4s ease .6s;
+            transition: all .3s ease .6s;
             transform: translate(-50%,0);
             opacity: 0;
 
@@ -67,13 +67,13 @@
     }
     &__text {
         margin: 0 0 28px;
-        transition: all .5s ease .2s;
+        transition: all .3s ease .2s;
         opacity: 0;
         position: relative;
         left: 30px;
     }
     &__author {
-        transition: all .5s ease .3s;
+        transition: all .3s ease .3s;
         opacity: 0;
         text-shadow: 0px 0px 10px rgba(0, 0, 0, .6);
         position: relative;
@@ -90,7 +90,7 @@
         transition: all .5s ease .1s;
         &.active {
             opacity: 1;
-            .opinions-carousel__avatar {
+            .columns-slider__avatar {
                 top: 0;
                 opacity: 1;
                 &:before,
@@ -98,11 +98,11 @@
                     opacity: 1;
                 }
             }
-            .opinions-carousel__text {
+            .columns-slider__text {
                 opacity: 1;
                 left: 0;
             }
-            .opinions-carousel__author {
+            .columns-slider__author {
                 opacity: 1;
                 left: 0;
             }

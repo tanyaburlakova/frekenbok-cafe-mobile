@@ -1,5 +1,5 @@
 .reviews {
-    &__head {
+    &__title {
         position: relative;
         z-index: 2;
         margin: 0 auto;
@@ -32,25 +32,11 @@
         left: 50%;
         transform: translate(-50%, 0);
     }
-    &__zoom-in {
+    .icon {
         display: inline-block;
         vertical-align: middle;
-
-        .retina-sprite(@map-zoom-in-group);
     }
-    &__zoom-out {
-        display: inline-block;
-        vertical-align: middle;
-
-        .retina-sprite(@map-zoom-out-group);
-    }
-    .i-map-zoom {
-        display: inline-block;
+    .icon-map-zoom {
         margin: 0 5px;
-        vertical-align: middle;
     }
-}
-
-.i-map-zoom {
-    .retina-sprite(@lupa-group);
 }

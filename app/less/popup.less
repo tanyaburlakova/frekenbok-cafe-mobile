@@ -20,6 +20,7 @@
 
         .retina-sprite(@popup-group);
     }
+    // popup is open
     &.is-show-popup {
         z-index: 100;
         visibility: visible;
@@ -28,6 +29,7 @@
             top: 55px;
         }
     }
+    // navigation popup
     &_navigation {
         padding: 0;
         .popup__inner {
@@ -42,6 +44,7 @@
             }
         }
     }
+    // full height screen popup
     &_full-height {
         .popup__inner {
             right: 0;
@@ -53,7 +56,7 @@
             transform: translate(0, 0);
             background: url('../img/bg/pattern_green.jpg') repeat 0 0;
         }
-        .popup__closer {
+        .popup__close {
             top: -50px;
             right: 15px;
         }
@@ -80,7 +83,7 @@
 
         -webkit-overflow-scrolling: touch;
     }
-    &__closer {
+    &__close {
         position: absolute;
         z-index: 95;
         top: -23px;

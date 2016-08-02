@@ -1,12 +1,21 @@
 <div class="reviews">
-	<div class="reviews__head jsPopupHandler" data-popup-handler="reviews">Отзывы</div>
+	<h2 class="reviews__title jsPopupHandler" data-popup-handler="reviews">
+		Отзывы
+	</h2>
 	<div class="map">
+		<!-- Google map -->
 		<div class="map__container" id="map"></div>
+		<!-- Custonm controls -->
 		<div class="map__controls">
-			<div id="zoomout" class="map__zoom-in"></div>
-			<i class="i-map-zoom"></i>
-			<div id="zoomin" class="map__zoom-out"></div>
+			<i id="zoomout" class="icon icon-zoom-out"></i>
+			<i class="icon icon-map-zoom"></i>
+			<i id="zoomin" class="icon icon-zoom-in"></i>
 		</div>
 	</div>
-	<a class="reviews__add jsPopupHandler" data-popup-handler="send-review" href="">Оставить отзыв</a>
+	<!-- Add new review button -->
+	<a class="reviews__add jsPopupHandler"
+		data-popup-handler="send-review"
+		href="">
+		Оставить отзыв
+	</a>
 </div>
