@@ -10,19 +10,22 @@
     box-shadow: 0 0 0 3px #345c62, 0 0 20px 3px rgba(0, 0, 0, .3);
 
     .clearfix();
-    &:after {
+    &:before {
         position: absolute;
         top: 41px;
         left: 50%;
         width: 82px;
         height: 41px;
-        transform: translate(-50%,0);
         content: '';
+        transform: translate(-50%,0);
         border: 1px dashed #1f464d;
         border-top: 0;
-        border-radius: 0 0 100px 100px;
+        border-radius: 0 0 42px 42px;
+        -webkit-border-radius: 0 0 42px 42px;
         background: #345c62;
         box-shadow: 0 0 0 3px #345c62, 0 5px 6px 3px rgba(0, 0, 0, .1);
+
+        -webkit-appearance: none;
     }
     &__phone {
         display: block;

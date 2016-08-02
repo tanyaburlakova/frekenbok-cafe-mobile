@@ -1,13 +1,15 @@
 .opinions {
     position: relative;
     height: 450px;
-    padding: 142px 16px 0;
+    padding: 135px 16px 0;
     background: url('../img/bg/reviews.jpg') no-repeat 50% 0;
     background-size: cover;
 }
 
 .opinions-carousel {
     &__slide {
+        padding-top: 14px;
+
         .clearfix();
     }
     &__left {
@@ -15,23 +17,94 @@
         width: 64px;
     }
     &__avatar {
+        position: relative;
+        top: -20px;
+        transition: all .7s ease .1s;
+        opacity: 0;
         .image {
+            position: relative;
+            z-index: 2;
             border: 4px solid #ffffff;
             border-radius: 50%;
         }
+        &:after {
+            position: absolute;
+            bottom: -28px;
+            left: 50%;
+            content: '';
+            transition: all .4s ease .6s;
+            transform: translate(-50%,0);
+            opacity: 0;
+
+            .retina-sprite(@opinion-man-bottom-group);
+        }
+        &:before {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            content: '';
+            transition: all .2s ease .4s;
+            transform: translate(-50%,0);
+            opacity: 0;
+
+            .retina-sprite(@opinion-man-top-group);
+        }
+        &.is-female {
+            &:after {
+                bottom: -23px;
+
+                .retina-sprite(@opinion-woman-bottom-group);
+            }
+            &:before {
+                top: -14px;
+
+                .retina-sprite(@opinion-woman-top-group);
+            }
+        }
     }
     &__right {
-        padding: 5px 0 0 80px;
+        padding: 0 0 0 80px;
     }
     &__text {
         margin: 0 0 28px;
+        transition: all .5s ease .2s;
+        opacity: 0;
+        position: relative;
+        left: 30px;
     }
     &__author {
+        transition: all .5s ease .3s;
+        opacity: 0;
         text-shadow: 0px 0px 10px rgba(0, 0, 0, .6);
+        position: relative;
+        left: 40px;
         span {
             color: #8affff;
             &:before {
                 content: ' ';
+            }
+        }
+    }
+    .owl-item {
+        opacity: 0;
+        transition: all .5s ease .1s;
+        &.active {
+            opacity: 1;
+            .opinions-carousel__avatar {
+                top: 0;
+                opacity: 1;
+                &:before,
+                &:after {
+                    opacity: 1;
+                }
+            }
+            .opinions-carousel__text {
+                opacity: 1;
+                left: 0;
+            }
+            .opinions-carousel__author {
+                opacity: 1;
+                left: 0;
             }
         }
     }

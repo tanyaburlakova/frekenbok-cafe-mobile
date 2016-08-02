@@ -15,6 +15,7 @@ import babel from 'gulp-babel';
 import templateData from './app/data/data.json';
 import mainBowerFiles from 'main-bower-files';
 import spritesmith from 'gulp.spritesmith';
+import tinypng from 'gulp-tinypng-compress';
 let bowerFiles = mainBowerFiles();
 
 console.info(`
@@ -231,4 +232,17 @@ gulp.task('sprite', function() {
 
     spriteData.img.pipe(gulp.dest('public/img'));
     spriteData.css.pipe(gulp.dest('app/less'));
+});
+
+/******************************
+ * Tinypng compress
+ ******************************/
+gulp.task('tinypng', function () {
+    gulp.src('public/img/**/*.{png,jpg,jpeg}')
+        .pipe(tinypng({
+            key: 'YIFzLf-VnRMDxQaW-GRLmHwGbxVGSpaI',
+            sigFile: 'images/.tinypng-sigs',
+            log: true
+        }))
+        .pipe(gulp.dest('images'));
 });
