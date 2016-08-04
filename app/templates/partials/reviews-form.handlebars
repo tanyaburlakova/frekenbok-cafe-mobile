@@ -1,7 +1,7 @@
 <div class="popup jsPopupEl" data-popup-el="send-review">
 	<div class="popup__inner form">
 		<!-- Form -->
-		<form action="#">
+		<form action="#" id="send-review-form">
 			<!-- Header -->
 			<header class="form__header">
 				<h2 class="form__title headline">
@@ -13,15 +13,29 @@
 				<div class="form__data">
 					<!-- City -->
 					<div class="form__row form__row_city">
-						<input id="city" type="text" class="input" placeholder="Из какого вы города?">
+						<input id="city"
+							type="text"
+							class="input"
+							placeholder="Из какого вы города?"
+							data-validation="required"
+							data-validation-error-msg="Это поле не может быть пустым">
 					</div>
 					<!-- Name -->
 					<div class="form__row form__row_name">
-						<input id="name" type="text" class="input" placeholder="Как Вас зовут?">
+						<input id="name"
+							type="text"
+							class="input"
+							placeholder="Как Вас зовут?"
+							data-validation="required"
+							data-validation-error-msg="Это поле не может быть пустым">
 					</div>
 					<!-- Text -->
 					<div class="form__row form__row_text">
-						<textarea id="review" class="textarea" placeholder="Напишите, что вы о нас думаете"></textarea>
+						<textarea id="review"
+							placeholder="Напишите, что вы о нас думаете"
+							class="textarea"
+							data-validation="required"
+							data-validation-error-msg="Это поле не может быть пустым"></textarea>
 					</div>
 					<!-- Submit -->
 					<div class="form__row">

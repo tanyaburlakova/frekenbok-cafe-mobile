@@ -1,9 +1,9 @@
 {
   "name": "gulp-frontend-boilerplate",
   "version": "1.2.0",
-  "homepage": "https://github.com/fatuk/gulp-frontend-boilerplate",
+  "homepage": "https://github.com/tanyaburlakova/frekenbok-cafe-mobile",
   "authors": [
-    "fatuk <fatukk@gmail.com>"
+    "tanyaburlakova <ta.burlakova@gmail.com>"
   ],
   "moduleType": [
     "amd"

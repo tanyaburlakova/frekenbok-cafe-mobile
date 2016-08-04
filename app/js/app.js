@@ -1,29 +1,18 @@
 $(() => {
     var
-        map,
-        mapDirection,
         $body = $('body'),
         $popups = $('.jsPopupEl'),
-        $section = $('.jsScrollToEl'),
         // classes
         showPopup = 'is-show-popup',
         noScroll = 'is-no-scroll';
-
+    // vars
 
     $(".jsOpinionsCarousel").owlCarousel({
         items: 1,
-
-        // Events
         touchDrag: false,
-
-        //Autoplay
         autoplay: true,
         autoplayTimeout: 8000,
-
-        //Pagination
         dots: true,
-
-        // Other
         addClassActive: true,
         loop: true,
         singleItem: true,
@@ -31,13 +20,9 @@ $(() => {
         animateOut: 'fadeOut'
     });
 
-    $('.jsConceptCarousel').owlCarousel({
+    $('.jsSlider').owlCarousel({
         items: 1,
-
-        // Events
         touchDrag: false,
-
-        // Other
         addClassActive: true,
         loop: true,
         dots: false,
@@ -48,21 +33,13 @@ $(() => {
         animateOut: 'fadeOut'
     });
 
-    $('.jsReviewsCarousel').owlCarousel({
-        items: 1,
+    // Setup form validation on the form 'send-review-form'
+    $.validate({
+        form: '#send-review-form',
+        errorMessageClass: 'error-message',
+        onError : function($form) {
 
-        // Events
-        touchDrag: false,
-
-        // Other
-        addClassActive: true,
-        loop: true,
-        dots: false,
-        nav: true,
-        navText: false,
-        singleItem: true,
-        animateIn: 'fadeIn',
-        animateOut: 'fadeOut'
+        }
     });
 
     // show/hide site popups
@@ -94,7 +71,9 @@ $(() => {
     $('.jsScrollToHandler').on('click', function(e) {
         e.preventDefault();
 
-        var currentHadler = $(this).attr('href'),
+        var
+            $section = $('.jsScrollToEl'),
+            currentHadler = $(this).attr('href'),
             currentId = currentHadler.replace('#', ''),
             currentEl = $section.filter('[id="' + currentId + '"]'),
             elPosition = currentEl.offset().top,
@@ -109,27 +88,7 @@ $(() => {
     });
 
     function initMap() {
-        /**
-         * The HomeControl adds +/- button for the map
-         *
-         */
-
-        function HomeControl(controlDiv, map) {
-            google.maps.event.addDomListener(zoomout, 'click', function() {
-                var currentZoomLevel = map.getZoom();
-                if (currentZoomLevel != 0) {
-                    map.setZoom(currentZoomLevel - 1);
-                }
-            });
-
-            google.maps.event.addDomListener(zoomin, 'click', function() {
-                var currentZoomLevel = map.getZoom();
-                if (currentZoomLevel != 21) {
-                    map.setZoom(currentZoomLevel + 1);
-                }
-            });
-        }
-
+        // need to remove after add real data
         var macDoList = [{
             lat: 49.00408,
             lng: 2.56228,
@@ -167,20 +126,16 @@ $(() => {
             }
         }, ];
 
-        // Setup the different icons and shadows
-        var iconURLPrefix = '../img/markers/';
+        var
+            map,
+            icons = [],
+            markers = [],
+            iconsLength,
+            iconCounter = 0,
+            iconURLPrefix = '../img/markers/';
+        // vars
 
-        var icons = [
-            iconURLPrefix + 'm1.png',
-            iconURLPrefix + 'm2.png',
-            iconURLPrefix + 'm3.png',
-            iconURLPrefix + 'm4.png',
-            iconURLPrefix + 'm5.png'
-        ]
-
-        var iconsLength = icons.length;
-
-        var map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
             zoom: 3,
             disableDefaultUI: true,
             zoomControl: false,
@@ -202,21 +157,29 @@ $(() => {
             ]
         });
 
-        var infowindow = new google.maps.InfoWindow({
-            maxWidth: 160
-        });
+        // Setup the different icons
+        icons = [
+            iconURLPrefix + 'm1.png',
+            iconURLPrefix + 'm2.png',
+            iconURLPrefix + 'm3.png',
+            iconURLPrefix + 'm4.png',
+            iconURLPrefix + 'm5.png'
+        ];
 
-        var markers = [];
-        var iconCounter = 0;
+        iconsLength = icons.length;
 
         for (var i = 0; i < macDoList.length; i++) {
+            var
+                myLatLng,
+                marker;
+            // vars
 
-            var latLng = new google.maps.LatLng(
+            myLatLng = new google.maps.LatLng(
                 macDoList[i].lat,
                 macDoList[i].lng);
 
-            var marker = new google.maps.Marker({
-                position: latLng,
+            marker = new google.maps.Marker({
+                position: myLatLng,
                 map: map,
                 icon: icons[iconCounter]
             });
@@ -229,21 +192,18 @@ $(() => {
                 iconCounter = 0;
             }
 
-            // Register a click event listener on the marker to display the corresponding infowindow content
+            // Register a click event listener on the marker to show popup
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
-
                 return function() {
-                    // Register a click event listener on the marker
                     $('.jsPopupHandler[data-popup-handler="reviews"]').trigger('click');
                 }
-
             })(marker, i));
-
         }
 
         function autoCenter() {
             //  Create a new viewpoint bound
-            var bounds = new google.maps.LatLngBounds();
+            var
+                bounds = new google.maps.LatLngBounds();
             //  Go through each...
             for (var i = 0; i < markers.length; i++) {
                 bounds.extend(markers[i].position);
@@ -254,7 +214,13 @@ $(() => {
 
         autoCenter();
 
-        var clusterStyles = [{
+        var
+            clusterStyles,
+            clusterOptions,
+            markerCluster;
+        //vars
+
+        clusterStyles = [{
             textColor: '#333333',
             url: '../img/but_blue.svg',
             height: 25,
@@ -262,12 +228,12 @@ $(() => {
             textSize: 14
         }];
 
-        var clusterOptions = {
+        clusterOptions = {
             styles: clusterStyles,
             zoomOnClick: false
         };
 
-        var markerCluster = new MarkerClusterer(map, markers, clusterOptions);
+        markerCluster = new MarkerClusterer(map, markers, clusterOptions);
 
         // Register a click event listener on the cluster
         google.maps.event.addListener(markerCluster, 'clusterclick',
@@ -276,23 +242,45 @@ $(() => {
             }
         );
 
+        function HomeControl(controlDiv, map) {
+            google.maps.event.addDomListener(zoomout, 'click', function() {
+                var
+                    currentZoomLevel = map.getZoom();
+                if (currentZoomLevel != 0) {
+                    map.setZoom(currentZoomLevel - 1);
+                }
+            });
+
+            google.maps.event.addDomListener(zoomin, 'click', function() {
+                var
+                    currentZoomLevel = map.getZoom();
+                if (currentZoomLevel != 21) {
+                    map.setZoom(currentZoomLevel + 1);
+                }
+            });
+        }
+
         // Create the DIV to hold the control and
         // call the HomeControl() constructor passing
         // in this DIV.
-        var homeControlDiv = document.createElement('div');
-        var homeControl = new HomeControl(homeControlDiv, map);
+        var
+            homeControlDiv = document.createElement('div'),
+            homeControl = new HomeControl(homeControlDiv, map);
 
         homeControlDiv.index = 1;
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(homeControlDiv);
-
     }
 
     google.maps.event.addDomListener(window, 'load', initMap);
 
-    function initializeDirection(link) {
-        var map = new google.maps.Map(document.getElementById('map-direction'), {
-            center: { lat: 47.210921, lng: 38.932016 },
-            zoom: 12,
+    function initDirectionMap( link ) {
+        var map,
+            marker,
+            myLatLng = { lat: 47.210921, lng: 38.932016 };
+
+        map = new google.maps.Map(document.getElementById('map-direction'), {
+            center: myLatLng,
+            zoom: 16,
             disableDefaultUI: true,
             zoomControl: false,
             scaleControl: false,
@@ -312,28 +300,29 @@ $(() => {
             ]
         });
 
-        /**
-         * The HomeControl adds +/- button for the map
-         *
-         */
+        marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: "Hello World!"
+        });
 
         function HomeControl(controlDiv, map) {
             google.maps.event.addDomListener(zoomout1, 'click', function() {
-                var currentZoomLevel = map.getZoom();
+                var
+                    currentZoomLevel = map.getZoom();
                 if (currentZoomLevel != 0) {
                     map.setZoom(currentZoomLevel - 1);
                 }
             });
 
             google.maps.event.addDomListener(zoomin1, 'click', function() {
-                var currentZoomLevel = map.getZoom();
+                var
+                    currentZoomLevel = map.getZoom();
                 if (currentZoomLevel != 21) {
                     map.setZoom(currentZoomLevel + 1);
                 }
             });
         }
-
-        //var infoWindow = new google.maps.InfoWindow({ map: map });
 
         // HTML5 geolocation.
         if (navigator.geolocation) {
@@ -343,35 +332,39 @@ $(() => {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
+                // vars
 
                 getAddressFromLatLang(pos.lat, pos.lng);
 
                 function getAddressFromLatLang(lat, lng) {
-                    var geocoder = new google.maps.Geocoder();
-                    var latLng = new google.maps.LatLng(lat, lng);
-                    geocoder.geocode({ 'latLng': latLng }, function(results, status) {
+                    var
+                        geocoder = new google.maps.Geocoder(),
+                        myLatLng = new google.maps.LatLng(lat, lng);
+                    // vars
+
+                    geocoder.geocode({ 'latLng': myLatLng }, function(results, status) {
                         console.log(results);
                         if (status == google.maps.GeocoderStatus.OK) {
                             if (results[0]) {
-                                var currentAddress = results[0].formatted_address;
+                                var
+                                    currentAddress = results[0].formatted_address,
+                                    // the coordinates for direction
+                                    end = new google.maps.LatLng(47.210921, 38.932016),
+                                    start = new google.maps.LatLng(pos.lat, pos.lng),
+                                    // init services
+                                    directionsDisplay = new google.maps.DirectionsRenderer(),
+                                    directionsService = new google.maps.DirectionsService(),
+                                    // request
+                                    request = {
+                                        origin: start,
+                                        destination: end,
+                                        travelMode: google.maps.TravelMode.DRIVING
+                                    };
+                                // vars
 
-                                // the coordinates for direction
-                                var end = new google.maps.LatLng(47.210921, 38.932016);
-                                var start = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-                                // init services
-                                var directionsDisplay = new google.maps.DirectionsRenderer();
                                 directionsDisplay.setMap(map);
 
-                                // request
-                                var request = {
-                                    origin: start,
-                                    destination: end,
-                                    travelMode: google.maps.TravelMode.DRIVING
-                                };
-
                                 // response
-                                var directionsService = new google.maps.DirectionsService();
                                 directionsService.route(request, function(response, status) {
                                     if (status == google.maps.DirectionsStatus.OK) {
                                         directionsDisplay.setDirections(response);
@@ -388,24 +381,25 @@ $(() => {
                     });
                 }
             }, function() {
-                handleLocationError(true, map.getCenter());
+                handleLocationError(true, map.setCenter(marker.getPosition()));
             });
         } else {
             // Browser doesn't support Geolocation
-            handleLocationError(false, map.getCenter());
+            handleLocationError(false, map.setCenter(marker.getPosition()));
         }
 
         // Create the DIV to hold the control and
         // call the HomeControl() constructor passing
         // in this DIV.
-        var homeControlDiv = document.createElement('div');
-        var homeControl = new HomeControl(homeControlDiv, map);
+        var
+            homeControlDiv = document.createElement('div'),
+            homeControl = new HomeControl(homeControlDiv, map);
 
         homeControlDiv.index = 1;
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(homeControlDiv);
     }
 
     $('.jsInitMapDirection').on('click', function() {
-        google.maps.event.addDomListener(window, 'load', initializeDirection(this));
+        google.maps.event.addDomListener(window, 'load', initDirectionMap(this));
     })
 });
