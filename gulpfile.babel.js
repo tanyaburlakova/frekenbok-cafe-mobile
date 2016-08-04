@@ -16,6 +16,7 @@ import templateData from './app/data/data.json';
 import mainBowerFiles from 'main-bower-files';
 import spritesmith from 'gulp.spritesmith';
 import tinypng from 'gulp-tinypng-compress';
+import jsonServer from 'json-server';
 let bowerFiles = mainBowerFiles();
 
 console.info(`

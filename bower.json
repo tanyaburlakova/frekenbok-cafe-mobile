@@ -33,6 +33,7 @@
     "normalize.less": "^1.0.0",
     "owl.carousel": "^2.1.6",
     "remodal": "^1.1.0",
-    "jquery-form-validator": "^2.3.33"
+    "jquery-form-validator": "^2.3.33",
+    "markerclustererplus": "^2.1.4"
   }
 }
