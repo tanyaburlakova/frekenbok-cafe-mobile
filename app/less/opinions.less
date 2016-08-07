@@ -21,12 +21,13 @@
     &__avatar {
         position: relative;
         transition: all .5s ease .1s;
-        opacity: 0;
         .image {
             position: relative;
             z-index: 2;
             border: 4px solid #ffffff;
             border-radius: 50%;
+                display: block;
+    width: 100%;
         }
         &:after {
             position: absolute;
@@ -34,7 +35,6 @@
             left: 50%;
             content: '';
             transform: translate(-50%,0);
-            opacity: 0;
 
             .retina-sprite(@opinion-man-bottom-group);
         }
@@ -44,7 +44,6 @@
             left: 50%;
             content: '';
             transform: translate(-50%,0);
-            opacity: 0;
 
             .retina-sprite(@opinion-man-top-group);
         }
@@ -68,12 +67,10 @@
         position: relative;
         margin: 0 0 28px;
         transition: all .3s ease .2s;
-        opacity: 0;
     }
     &__author {
         position: relative;
         transition: all .3s ease .3s;
-        opacity: 0;
         text-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
         span {
             color: #8affff;
@@ -100,20 +97,20 @@
             }
         }
     }
-    .owl-dots {
+    .slick-dots {
         position: absolute;
         right: 0;
         bottom: 92px;
         left: 0;
         text-align: center;
-        .owl-dot {
+        li {
             position: relative;
             display: inline-block;
             margin: 0 3px;
             padding: 4px;
             cursor: pointer;
             vertical-align: middle;
-            span {
+            button {
                 display: inline-block;
                 width: 8px;
                 height: 8px;
@@ -121,9 +118,9 @@
                 border-radius: 50%;
                 background-color: rgba(255, 255, 255, .68);
             }
-            &.active {
+            &.slick-active {
                 padding: 2px;
-                span {
+                button {
                     width: 21px;
                     height: 20px;
                     margin: 0 1px;

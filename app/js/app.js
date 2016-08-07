@@ -7,30 +7,19 @@ $(() => {
         noScroll = 'is-no-scroll';
     // vars
 
-    $(".jsOpinionsCarousel").owlCarousel({
-        items: 1,
-        touchDrag: false,
-        autoplay: true,
-        autoplayTimeout: 8000,
-        dots: true,
-        addClassActive: true,
-        loop: true,
-        singleItem: true,
-        animateIn: 'fadeIn',
-        animateOut: 'fadeOut'
+    $('.jsOpinionsCarousel').slick({
+      dots: true,
+      speed: 500,
+      arrows: false,
+      fade: true,
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 7000
     });
 
-    $('.jsSlider').owlCarousel({
-        items: 1,
-        touchDrag: false,
-        addClassActive: true,
-        loop: true,
-        dots: false,
-        nav: true,
-        navText: false,
-        singleItem: true,
-        animateIn: 'fadeIn',
-        animateOut: 'fadeOut'
+    $('.jsSlider').slick({
+      speed: 500,
+      fade: true
     });
 
     // Setup form validation on the form 'send-review-form'

@@ -12,7 +12,7 @@
         padding: 28px 0 0;
         text-align: center;
         letter-spacing: .8px;
-        background: url('../img/concept-head@2x.png')  no-repeat 50% 0;
+        background: url('../img/concept-head@2x.png') no-repeat 50% 0;
         background-size: 700px 60px;
     }
 }
@@ -48,9 +48,31 @@
         padding: 20px 15px;
         text-align: center;
 
-        .image-2x('../img/concept-box.png');
+        .retina-sprite(@concept-box-group);
     }
-    .owl-nav {
-        bottom: 22px;
-    }
+}
+
+.slick-prev {
+    position: absolute;
+    z-index: 10;
+    top: auto;
+    bottom: 22px;
+    left: 50%;
+    display: inline-block;
+    margin: 0 18px;
+    vertical-align: top;
+
+    .retina-sprite(@slider-btn-next-group);
+}
+
+.slick-next {
+    position: absolute;
+    top: auto;
+    right: 50%;
+    bottom: 22px;
+    display: inline-block;
+    margin: 0 20px;
+    vertical-align: top;
+
+    .retina-sprite(@slider-btn-prev-group);
 }

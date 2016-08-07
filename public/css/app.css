@@ -1,3 +1,4 @@
+@charset 'UTF-8';
 @import url('//fonts.googleapis.com/css?family=Neucha|Lobster&subset=cyrillic,latin');
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -369,6 +370,196 @@ textarea {
   font: inherit;
   /* 2 */
 }
+/* Slider */
+.slick-slider {
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+.slick-track:before,
+.slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+  display: none;
+}
+/* Arrows */
+.slick-prev,
+.slick-next {
+  font-size: 0px;
+  line-height: 0px;
+  position: absolute;
+  display: block;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+.slick-prev {
+  left: -25px;
+}
+.slick-prev[dir='rtl'] {
+  right: -25px;
+  left: auto;
+}
+.slick-prev:before {
+  content: '←';
+}
+.slick-prev:before[dir='rtl'] {
+  content: '→';
+}
+.slick-next {
+  right: -25px;
+}
+.slick-next[dir='rtl'] {
+  right: auto;
+  left: -25px;
+}
+.slick-next:before {
+  content: '→';
+}
+.slick-next:before[dir='rtl'] {
+  content: '←';
+}
+/* Dots */
+.slick-dotted .slick-slider {
+  margin-bottom: 30px;
+}
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+.slick-dots li button {
+  font-size: 0px;
+  line-height: 0px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  opacity: 1;
+}
+.slick-dots li button:before {
+  font-size: 6px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  opacity: 0.25;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: black;
+}
 /* Micro ClearFix Mixin */
 .clearfix {
   zoom: 1;
@@ -401,14 +592,14 @@ textarea {
   text-align: center;
   background-position: 50% 0;
   background-image: url(../img/sprite.png);
-  background-position: -1096px -109px;
+  background-position: -180px -540px;
   width: 180px;
   height: 45px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .headline_section {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .scroll-down {
@@ -473,14 +664,14 @@ a {
 }
 .btn_send {
   background-image: url(../img/sprite.png);
-  background-position: -705px -168px;
+  background-position: -360px -540px;
   width: 180px;
   height: 41px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .btn_send {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .btn_wide {
@@ -596,84 +787,84 @@ a {
   top: -17px;
   left: -16px;
   background-image: url(../img/sprite.png);
-  background-position: -1128px -253px;
+  background-position: -555px -351px;
   width: 36px;
   height: 36px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .form__row_city:before {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .form__row_city:after {
   top: 20px;
   right: -20px;
   background-image: url(../img/sprite.png);
-  background-position: -842px -209px;
+  background-position: -541px -459px;
   width: 50px;
   height: 39px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .form__row_city:after {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .form__row_name:before {
   top: 5px;
   left: -21px;
   background-image: url(../img/sprite.png);
-  background-position: -600px -334px;
+  background-position: -658px -332px;
   width: 30px;
   height: 51px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .form__row_name:before {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .form__row_name:after {
   top: 18px;
   right: -20px;
   background-image: url(../img/sprite.png);
-  background-position: -661px -334px;
+  background-position: -540px -540px;
   width: 33px;
   height: 37px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .form__row_name:after {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .form__row_text:before {
   bottom: -15px;
   left: -18px;
   background-image: url(../img/sprite.png);
-  background-position: -600px -385px;
+  background-position: -137px -586px;
   width: 32px;
   height: 38px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .form__row_text:before {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .form__row_text:after {
   top: 45px;
   right: -17px;
   background-image: url(../img/sprite.png);
-  background-position: -885px -183px;
+  background-position: -597px -540px;
   width: 26px;
   height: 22px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .form__row_text:after {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .form__complete {
@@ -690,18 +881,15 @@ a {
   margin: 10px auto;
   content: '';
   background-image: url(../img/sprite.png);
-  background-position: -705px -109px;
+  background-position: -296px -400px;
   width: 211px;
   height: 59px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .form__complete-text:after {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
-}
-.field_error .input {
-  border-color: red;
 }
 .error-message {
   font-size: 13px;
@@ -783,14 +971,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
 */
 .icon-logo {
   background-image: url(../img/sprite.png);
-  background-position: -990px -253px;
+  background-position: -55px -630px;
   width: 55px;
   height: 47px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .icon-logo {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .icon-menu {
@@ -820,14 +1008,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
 }
 .icon-phone {
   background-image: url(../img/sprite.png);
-  background-position: -892px -209px;
+  background-position: -600px -506px;
   width: 55px;
   height: 34px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .icon-phone {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .icon-button-blue {
@@ -852,38 +1040,38 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
 }
 .icon-zoom-in {
   background-image: url(../img/sprite.png);
-  background-position: -763px -253px;
+  background-position: -600px -274px;
   width: 58px;
   height: 58px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .icon-zoom-in {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .icon-zoom-out {
   background-image: url(../img/sprite.png);
-  background-position: -705px -253px;
+  background-position: -600px -332px;
   width: 58px;
   height: 58px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .icon-zoom-out {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .icon-map-zoom {
   background-image: url(../img/sprite.png);
-  background-position: -630px -334px;
+  background-position: -657px -448px;
   width: 31px;
   height: 48px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .icon-map-zoom {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .popup {
@@ -917,7 +1105,7 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .popup__inner {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .popup.is-show-popup {
@@ -941,7 +1129,7 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .popup_navigation .popup__inner {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .popup_navigation.is-show-popup {
@@ -987,14 +1175,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   padding-right: 25px;
   text-align: right;
   background-image: url(../img/sprite.png);
-  background-position: -964px -60px;
+  background-position: -296px -459px;
   width: 245px;
   height: 45px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .popup__title {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .popup__back {
@@ -1002,14 +1190,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   top: 8px;
   left: 5px;
   background-image: url(../img/sprite.png);
-  background-position: -1209px -60px;
+  background-position: -507px -400px;
   width: 70px;
   height: 45px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .popup__back {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .popup__scroll {
@@ -1036,14 +1224,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   top: -23px;
   right: -5px;
   background-image: url(../img/sprite.png);
-  background-position: -1045px -253px;
+  background-position: -658px -274px;
   width: 45px;
   height: 45px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .popup__close {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .overlay {
@@ -1305,14 +1493,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   margin: 0 18px;
   vertical-align: top;
   background-image: url(../img/sprite.png);
-  background-position: -878px -253px;
+  background-position: -600px -448px;
   width: 57px;
   height: 58px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .owl-prev {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .owl-next {
@@ -1320,14 +1508,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   margin: 0 20px;
   vertical-align: top;
   background-image: url(../img/sprite.png);
-  background-position: -821px -253px;
+  background-position: -600px -390px;
   width: 57px;
   height: 58px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .owl-next {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .owl-theme .owl-nav .disabled {
@@ -1386,13 +1574,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
 .columns-slider__avatar {
   position: relative;
   transition: all .5s ease .1s;
-  opacity: 0;
 }
 .columns-slider__avatar .image {
   position: relative;
   z-index: 2;
   border: 4px solid #ffffff;
   border-radius: 50%;
+  display: block;
+  width: 100%;
 }
 .columns-slider__avatar:after {
   position: absolute;
@@ -1402,16 +1591,15 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   -webkit-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
-  opacity: 0;
   background-image: url(../img/sprite.png);
-  background-position: -1090px -253px;
+  background-position: -657px -390px;
   width: 38px;
   height: 40px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .columns-slider__avatar:after {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .columns-slider__avatar:before {
@@ -1422,42 +1610,41 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   -webkit-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
-  opacity: 0;
   background-image: url(../img/sprite.png);
-  background-position: -911px -183px;
+  background-position: -657px -430px;
   width: 24px;
   height: 18px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .columns-slider__avatar:before {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .columns-slider__avatar.is-female:after {
   bottom: -23px;
   background-image: url(../img/sprite.png);
-  background-position: -947px -209px;
+  background-position: -655px -506px;
   width: 40px;
   height: 31px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .columns-slider__avatar.is-female:after {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .columns-slider__avatar.is-female:before {
   top: -14px;
   background-image: url(../img/sprite.png);
-  background-position: -1276px -109px;
+  background-position: -573px -540px;
   width: 24px;
   height: 29px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .columns-slider__avatar.is-female:before {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .columns-slider__right {
@@ -1467,12 +1654,10 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   position: relative;
   margin: 0 0 28px;
   transition: all .3s ease .2s;
-  opacity: 0;
 }
 .columns-slider__author {
   position: relative;
   transition: all .3s ease .3s;
-  opacity: 0;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 .columns-slider__author span {
@@ -1499,14 +1684,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
 .columns-slider .owl-item.active .columns-slider__author {
   opacity: 1;
 }
-.columns-slider .owl-dots {
+.columns-slider .slick-dots {
   position: absolute;
   right: 0;
   bottom: 92px;
   left: 0;
   text-align: center;
 }
-.columns-slider .owl-dots .owl-dot {
+.columns-slider .slick-dots li {
   position: relative;
   display: inline-block;
   margin: 0 3px;
@@ -1514,7 +1699,7 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   cursor: pointer;
   vertical-align: middle;
 }
-.columns-slider .owl-dots .owl-dot span {
+.columns-slider .slick-dots li button {
   display: inline-block;
   width: 8px;
   height: 8px;
@@ -1522,10 +1707,10 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.68);
 }
-.columns-slider .owl-dots .owl-dot.active {
+.columns-slider .slick-dots li.slick-active {
   padding: 2px;
 }
-.columns-slider .owl-dots .owl-dot.active span {
+.columns-slider .slick-dots li.slick-active button {
   width: 21px;
   height: 20px;
   margin: 0 1px;
@@ -1540,14 +1725,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   margin: 0 auto;
   text-indent: -9999px;
   background-image: url(../img/sprite.png);
-  background-position: -705px -209px;
+  background-position: 0px -586px;
   width: 137px;
   height: 44px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .map__title {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .map__btn {
@@ -1559,14 +1744,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   margin: 0 auto;
   text-align: center;
   background-image: url(../img/sprite.png);
-  background-position: -916px -109px;
+  background-position: 0px -540px;
   width: 180px;
   height: 46px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .map__btn {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .map:after {
@@ -1646,6 +1831,12 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   width: 100%;
   text-align: center;
 }
+.reviews-slider .slick-prev {
+  bottom: -25px;
+}
+.reviews-slider .slick-next {
+  bottom: -25px;
+}
 .concept {
   position: relative;
   margin: 0 0 25px;
@@ -1693,20 +1884,55 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   margin: -13px auto 0;
   padding: 20px 15px;
   text-align: center;
-  background-image: url(../img/concept-box.png);
-  background-repeat: no-repeat;
+  background-image: url(../img/sprite.png);
+  background-position: 0px -351px;
   width: 296px;
   height: 189px;
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .text-slider__text {
-    /* on retina, use image that's scaled by 2 */
-    background-image: url(../img/concept-box@2x.png);
-    background-size: 296px 189px;
+    background-image: url(../img/sprite@2x.png);
+    background-size: 705px 682px;
   }
 }
-.text-slider .owl-nav {
+.slick-prev {
+  position: absolute;
+  z-index: 10;
+  top: auto;
   bottom: 22px;
+  left: 50%;
+  display: inline-block;
+  margin: 0 18px;
+  vertical-align: top;
+  background-image: url(../img/sprite.png);
+  background-position: -600px -390px;
+  width: 57px;
+  height: 58px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .slick-prev {
+    background-image: url(../img/sprite@2x.png);
+    background-size: 705px 682px;
+  }
+}
+.slick-next {
+  position: absolute;
+  top: auto;
+  right: 50%;
+  bottom: 22px;
+  display: inline-block;
+  margin: 0 20px;
+  vertical-align: top;
+  background-image: url(../img/sprite.png);
+  background-position: -600px -448px;
+  width: 57px;
+  height: 58px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .slick-next {
+    background-image: url(../img/sprite@2x.png);
+    background-size: 705px 682px;
+  }
 }
 .site-footer {
   font-size: 15px;
@@ -1726,14 +1952,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   bottom: 10px;
   content: '';
   background-image: url(../img/sprite.png);
-  background-position: -600px -60px;
+  background-position: -600px 0px;
   width: 105px;
   height: 274px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .site-footer:before {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .site-footer:after {
@@ -1742,14 +1968,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   right: 5px;
   content: '';
   background-image: url(../img/sprite.png);
-  background-position: -935px -253px;
+  background-position: 0px -630px;
   width: 55px;
   height: 52px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .site-footer:after {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .badge {
@@ -1760,14 +1986,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   margin: 0 auto 10px;
   background-position: 50% 0;
   background-image: url(../img/sprite.png);
-  background-position: -705px -60px;
+  background-position: -296px -351px;
   width: 259px;
   height: 49px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .badge {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .badge:before {
@@ -1835,14 +2061,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
   background-image: url(../img/sprite.png);
-  background-position: -1140px -168px;
+  background-position: -296px -519px;
   width: 100px;
   height: 15px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .events__frame:before {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .events__frame_double-height {
@@ -1853,14 +2079,14 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
 }
 .events__frame_double-width:before {
   background-image: url(../img/sprite.png);
-  background-position: -885px -168px;
+  background-position: -296px -504px;
   width: 255px;
   height: 15px;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .events__frame_double-width:before {
     background-image: url(../img/sprite@2x.png);
-    background-size: 1300px 540px;
+    background-size: 705px 682px;
   }
 }
 .events__row {

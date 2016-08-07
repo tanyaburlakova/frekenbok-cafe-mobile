@@ -21,19 +21,15 @@
     "normalize.less": {
       "ignore": "normalize.less"
     },
-    "owl.carousel": {
-      "main": "dist/owl.carousel.js"
-    },
-    "remodal": {
-      "main": "dist/remodal.js"
+    "slick-carousel": {
+      "main": "slick/slick.js"
     }
   },
   "dependencies": {
     "jquery": "~2.1.1",
     "normalize.less": "^1.0.0",
-    "owl.carousel": "^2.1.6",
-    "remodal": "^1.1.0",
     "jquery-form-validator": "^2.3.33",
-    "markerclustererplus": "^2.1.4"
+    "markerclustererplus": "^2.1.4",
+    "slick-carousel": "^1.6.0"
   }
 }

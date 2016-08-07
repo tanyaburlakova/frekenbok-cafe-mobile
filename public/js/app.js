@@ -1,6 +1,10 @@
 'use strict';
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 $(function () {
+    var _$$slick;
+
     var $body = $('body'),
         $popups = $('.jsPopupEl'),
 
@@ -9,30 +13,16 @@ $(function () {
         noScroll = 'is-no-scroll';
     // vars
 
-    $(".jsOpinionsCarousel").owlCarousel({
-        items: 1,
-        touchDrag: false,
-        autoplay: true,
-        autoplayTimeout: 8000,
+    $('.jsOpinionsCarousel').slick((_$$slick = {
         dots: true,
-        addClassActive: true,
-        loop: true,
-        singleItem: true,
-        animateIn: 'fadeIn',
-        animateOut: 'fadeOut'
-    });
+        speed: 500,
+        arrows: false,
+        fade: true
+    }, _defineProperty(_$$slick, 'dots', true), _defineProperty(_$$slick, 'autoplay', true), _defineProperty(_$$slick, 'autoplaySpeed', 7000), _$$slick));
 
-    $('.jsSlider').owlCarousel({
-        items: 1,
-        touchDrag: false,
-        addClassActive: true,
-        loop: true,
-        dots: false,
-        nav: true,
-        navText: false,
-        singleItem: true,
-        animateIn: 'fadeIn',
-        animateOut: 'fadeOut'
+    $('.jsSlider').slick({
+        speed: 500,
+        fade: true
     });
 
     // Setup form validation on the form 'send-review-form'
