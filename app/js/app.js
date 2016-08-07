@@ -221,11 +221,12 @@ $(() => {
         //vars
 
         clusterStyles = [{
-            textColor: '#333333',
-            url: '../img/but_blue.svg',
-            height: 25,
-            width: 25,
-            textSize: 14
+            textColor: '#ffffff',
+            url: '../img/cluster.svg',
+            fontFamily: 'Neucha',
+            height: 28,
+            width: 28,
+            textSize: 15
         }];
 
         clusterOptions = {
